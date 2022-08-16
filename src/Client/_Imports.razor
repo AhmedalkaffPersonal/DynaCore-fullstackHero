@@ -1,0 +1,62 @@
+﻿@*Libraries*@
+@using System.Net.Http
+@using System.Net.Http.Json
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.Authorization
+@using Microsoft.AspNetCore.Components.Forms
+@using Microsoft.AspNetCore.Components.Routing
+@using Microsoft.AspNetCore.Components.Web
+@using Microsoft.AspNetCore.Components.Web.Virtualization
+@using Microsoft.AspNetCore.Components.WebAssembly.Http
+@using Microsoft.JSInterop
+@using Microsoft.AspNetCore.Identity;
+@using MudBlazor
+@using Blazored.LocalStorage;
+@using Blazored.FluentValidation
+
+@*Client Services*@
+@using DynaCore.Client.Infrastructure.Managers.Identity.Account
+@using DynaCore.Client.Infrastructure.Managers.Identity.Authentication
+@using DynaCore.Client.Infrastructure.Managers.Identity.Roles
+@using DynaCore.Client.Infrastructure.Managers.Identity.RoleClaims
+@using DynaCore.Client.Infrastructure.Managers.Identity.Users
+@using DynaCore.Client.Infrastructure.Managers.Preferences
+@using DynaCore.Client.Infrastructure.Managers.Interceptors
+@using DynaCore.Client.Infrastructure.Managers.Catalog.Product
+@using DynaCore.Client.Infrastructure.Managers.Catalog.Vendor
+@using DynaCore.Client.Infrastructure.Managers.Dashboard
+@using DynaCore.Client.Infrastructure.Managers.Communication
+@using DynaCore.Client.Infrastructure.Managers.Audit
+@using DynaCore.Client.Infrastructure.Managers.Misc.Document
+@using DynaCore.Client.Infrastructure.Managers.Misc.DocumentType
+
+@*Shared Libraries*@
+@using DynaCore.Shared.Constants.Permission
+@using DynaCore.Client.Shared.Components
+
+@using DynaCore.Client
+@using DynaCore.Client.Shared
+@using DynaCore.Client.Shared.Dialogs
+@using DynaCore.Client.Infrastructure.Settings
+
+@using DynaCore.Application.Requests.Identity
+
+@using DynaCore.Client.Pages.Authentication
+
+@using DynaCore.Client.Infrastructure.Authentication
+@using DynaCore.Client.Extensions
+
+@attribute [Authorize]
+@inject IAuthenticationManager _authenticationManager
+@inject IAccountManager _accountManager
+@inject NavigationManager _navigationManager
+@inject BlazorHeroStateProvider _stateProvider
+@inject IAuthorizationService _authorizationService
+@inject ISnackbar _snackBar
+@inject IDialogService _dialogService
+@inject HttpClient _httpClient
+@inject IHttpInterceptorManager _interceptor
+@inject ClientPreferenceManager _clientPreferenceManager
+@inject IUserManager _userManager
+@inject ILocalStorageService _localStorage;
+@inject IJSRuntime _jsRuntime;
